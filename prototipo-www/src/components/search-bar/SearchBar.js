@@ -11,7 +11,12 @@ export default class SearchBar extends Component {
 
     render() {
         return (
-            <input placeholder="Pesquise aqui" type="text" onChange={(e) => this.viewModel.filterItem(e.target.value)} />
+            <input 
+                placeholder="Pesquise aqui" 
+                type="text" 
+                onChange={(e) => this.viewModel.updateSearchText(e.target.value)} 
+                onKeyPress={(e) => this.viewModel.instantSearch(e)}
+            />
         )
     }
 }

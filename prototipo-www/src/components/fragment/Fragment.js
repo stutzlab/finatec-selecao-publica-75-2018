@@ -16,8 +16,9 @@ export default class Fragment extends Component {
         }
         return (
             <div>
-                <span>{this.state.nodeItem.titulo}</span>
-                <span>{this.state.nodeItem.conteudo}</span>
+                <span>{this.state.titulo}</span>
+                <span>{this.state.ligacao}</span>
+                <span>{this.state.conteudo}</span>
             </div>
         )
     }

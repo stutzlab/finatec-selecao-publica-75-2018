@@ -6,11 +6,18 @@ export default class FragmentModel extends RhelenaPresentationModel {
     constructor(node){
         super();
 
-        this.nodeItem = node;
+        // this.nodeItem = node;
+        this.titulo = node.titulo;
         this.uuid = node.uuid;
         this.conteudo = node.conteudo;
 
-        manuh.subscribe(`fragments/${uuidToTopicPath(this.nodeItem.uuid)}/visible/set`, `Fragment-${this.nodeItem.uuid}`, (msg, info)=> {
+        if(this.uuid.indexOf('inciso') != -1 || this.uuid.indexOf('alinea') != -1){
+            this.ligacao = '';
+        }else{
+            this.ligacao = ' - ';
+        }
+
+        manuh.subscribe(`fragments/${uuidToTopicPath(this.uuid)}/visible/set`, `Fragment-${this.uuid}`, (msg, info)=> {
             if(!info.retained){
                 this.visible = msg;
             }
