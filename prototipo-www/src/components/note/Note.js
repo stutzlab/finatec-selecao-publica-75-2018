@@ -15,6 +15,7 @@ export default class Note extends Component {
             <div>
                 <textarea rows={Math.floor(this.state.text.length/80)}
                     style={{width: "90%", minHeight: "100px"}}
+                    value={this.state.text}
                     defaultValue={this.state.text}
                     ref={(component) => this.viewModel.setTextArea(component) }
                     onChange={(e)=>{ this.viewModel.updateContent(e.target.value) }}

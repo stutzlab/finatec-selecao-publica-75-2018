@@ -44,16 +44,19 @@ export default class NoteModel extends RhelenaPresentationModel {
         }).then(response => {
             console.log("response", response);
             if (response.status == 200) {
+                console.log(`response code 200`);
                 this.updateStatus = 0;
                 if(this.editable){
+                    console.log(`editable`);
+                    this.cleanText();
                     manuh.publish('note/refresh', { refresh: true });
-                    this.text = '';
                 }else{
                     this.inEdition = false;
                     this.textarea = undefined;    
                 }
                 this.onFocus = false;
             } else {
+                console.log(`response code ${response.status}`)
                 this.updateStatus = 1;
                 console.log('Save Failed!')
             }
@@ -92,6 +95,11 @@ export default class NoteModel extends RhelenaPresentationModel {
 
     updateContent(value){
         this.text = value;
+    }
+
+    cleanText() {
+        console.log('Call of cleanText')
+        this.text = '';
     }
 
 }
