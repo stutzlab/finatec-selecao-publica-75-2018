@@ -1,17 +1,41 @@
 version: '2'
 
 services:
+  www:
+    image: prototipo-www:latest
+    build: ./prototipo-www
+    network_mode: bridge
+
+  flyio-www:
+      image: flyio/wormhole:0.6.0
+      restart: always
+      network_mode: bridge
+      environment:
+        - FLY_TOKEN=8e70e73f89b074cb014ec3eb0566d6a2cab6012457b1d3007aee50622b0ae1de
+        - FLY_LOCAL_ENDPOINT=www
+      links:
+        - www
   api:
     image: prototipo-api:latest
     build: ./prototipo-api
     network_mode: bridge
     ports:
       - 3000:3000
+      
+  flyio-api:
+      image: flyio/wormhole:0.6.0
+      restart: always
+      network_mode: bridge
+      environment:
+        - FLY_TOKEN=44f94c5adbec8edd083b0ac130ca3d844f08c57b30795c7b85ae03997fd262eb
+        - FLY_LOCAL_ENDPOINT=api
+      links:
+        - api
 
   mongodb:
     image: mongo:3.6.1
     network_mode: bridge
-    volumes:
-      - ./data/db:/data/db
+    # volumes:
+      # - ./data/db:/data/db
     ports:
       - 27017:27017
