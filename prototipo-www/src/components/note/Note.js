@@ -30,15 +30,17 @@ export default class Note extends Component {
 
     staticNote(){
         return (
-            <span onDoubleClick={(e) => { e.stopPropagation(); this.viewModel.editComment() }}>
-                {this.state.text}
-            </span>
+            <div className={noteStyle.card}>
+                <span onDoubleClick={(e) => { e.stopPropagation(); this.viewModel.editComment() }}>
+                    {this.state.text}
+                </span>
+            </div>
         )
     }
 
     render() {
         return (
-            <div>
+            <div style={{"marginBottom": "1rem"}}>
                 { !this.state.inEdition && this.staticNote()}
                 { this.state.inEdition && this.editable()}
             </div>

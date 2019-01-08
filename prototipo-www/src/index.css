@@ -28,3 +28,11 @@ button:hover {
   color: white;
   background: black;
 }
+
+h5 {
+  margin: 0;
+  padding: 0;
+  color: #BBB;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}

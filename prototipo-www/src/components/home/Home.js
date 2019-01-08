@@ -38,7 +38,8 @@ export default class Home extends Component {
                                         <Note note={{ note: "" }} editable></Note>
                                     </div>
 
-                                    <h3>Anotações</h3>
+                                    <h3 style={{marginBottom: 0}}>Anotações</h3>
+                                    <h5>(clique duas vezes para editar)</h5>
                                     { this.state.notes.map(n => <Note note={n}></Note> )}
                                     
                                 </Col>
