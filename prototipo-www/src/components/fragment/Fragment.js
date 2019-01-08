@@ -14,11 +14,21 @@ export default class Fragment extends Component {
         if(this.state.visible == 0) {
             return (<div></div>);
         }
+        let computedStyle = [fragmentStyle.wrap]
+        if (this.state.titulo.toLowerCase().match("art")) {
+            computedStyle.push(fragmentStyle.break)
+        }
+        if (this.state.titulo.toLowerCase().match("cap")) {
+            computedStyle.push(fragmentStyle.doubleBreak)
+        }
+        if (this.state.titulo.toLowerCase().match("tulo")) {
+            computedStyle.push(fragmentStyle.doubleBreak)
+        }
         return (
-            <div>
-                <span>{this.state.titulo}</span>
+            <div className={computedStyle.join(' ')}>
+                <strong>{this.state.titulo}</strong>
                 <span>{this.state.ligacao}</span>
-                <span>{this.state.conteudo}</span>
+                <span style={{flex:1}}>{this.state.conteudo}</span>
             </div>
         )
     }
