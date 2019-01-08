@@ -19,9 +19,13 @@ services:
     image: prototipo-api:latest
     build: ./prototipo-api
     network_mode: bridge
+    links:
+      - mongodb
     ports:
       - 3000:3000
-      
+    environment:
+      - MONGO_HOST=mongodb
+
   flyio-api:
       image: flyio/wormhole:0.6.0
       restart: always

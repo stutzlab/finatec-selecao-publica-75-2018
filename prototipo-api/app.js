@@ -26,7 +26,8 @@ app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/note', noteRouter);
 
-mongoose.connect('mongodb://localhost:27017/app');
+const mongoHost = MONGO_HOST || "localhost"
+mongoose.connect(`mongodb://${mongoHost}:27017/app`);
 mongoose.connection.once('open', () => {
     console.log('Database connected!');
 });
