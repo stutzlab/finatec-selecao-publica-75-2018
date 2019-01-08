@@ -1,5 +1,19 @@
 # FINATEC - SELEÇÃO PÚBLICA Nº 075/2018 - Protótipo funcional
 
+Para testar, faça algumas buscas de teste. Exemplo:
+
+```
+criança direito a creche
+```
+
+```
+conceder indulto presidente
+```
+
+```
+estabilidade servidor publico
+```
+
 O protótipo implementado e aqui disponibilizado é relevante e aderente pois procura demonstrar um o embrião de nossa proposta sobre a implementação do produto final da Constituição Federal Anotada, já exercitando questões de interação (UX), tecnologias de Frontend e Backend, infraestrutura, organização do projeto, segurança e acesso a dados.
 
 Nesse exercício, apresentamos uma tela simples em que a Constituição Federal é apresentada com uma ferramenta de busca e com o formulário para criação de anotações. Ao realizar a busca, o conteúdo da Constituição é filtrado inline, com feedback imediato, dando a sensação de controle e agilidade para o usuário, um dos pilares da UX. As notas, de semelhante modo, são criadas, editas e excluídas totalmente inline, sem muitas interações intermediárias, mas com sinalização da conclusão dessas operações, o que proporciona ao usuário uma percepção de resposta em tempo real aos seus comandos, uma outra boa prática de UX.

@@ -31,13 +31,13 @@ export const uuidToTopicPath = uuid => {
 export const indexCF = cf => {
   let options = {
     shouldSort: true,
-    // tokenize: true,
-    matchAllTokens: true,
-    findAllMatches: true,
-    threshold: 0.4,
-    location: 0,
-    distance: 100000,
-    // maxPatternLength: 32,
+    tokenize: true,
+    matchAllTokens: false,
+    findAllMatches: false,
+    threshold: .3,
+    location: 5,
+    distance: 10,
+    // maxPatternLength: 100,
     minMatchCharLength: 1,
     keys: [
       "conteudo"

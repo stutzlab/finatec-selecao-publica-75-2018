@@ -24,6 +24,9 @@ export default class Fragment extends Component {
         if (this.state.titulo.toLowerCase().match("tulo")) {
             computedStyle.push(fragmentStyle.doubleBreak)
         }
+        if (this.state.titulo.toLowerCase().match("seç")) {
+            computedStyle.push(fragmentStyle.doubleBreak)
+        }
         return (
             <div className={computedStyle.join(' ')}>
                 <strong>{this.state.titulo}</strong>
