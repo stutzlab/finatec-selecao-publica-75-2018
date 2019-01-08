@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  api:
+    image: prototipo-api:latest
+    build: ./prototipo-api
+    network_mode: bridge
+    ports:
+      - 3000:3000
+
+  mongodb:
+    image: mongo:3.6.1
+    network_mode: bridge
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - 27017:27017
