@@ -1,6 +1,6 @@
 # FINATEC - SELEÇÃO PÚBLICA Nº 075/2018 - Protótipo funcional
 
-Para testar, faça algumas buscas de teste. Exemplo:
+Para testar, acesse https://finatec.stutz.com.br/ e faça algumas buscas de teste. Exemplo:
 
 ```
 criança direito a creche
